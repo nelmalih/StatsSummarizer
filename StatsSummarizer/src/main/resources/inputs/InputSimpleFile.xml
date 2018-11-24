@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<persons>
+    <person>
+        <fullName>"Bouchta Bouzébbal"</fullName>
+        <age>35</age>
+        <gender>"male"</gender>
+        <jobTitle>"Engineer"</jobTitle>
+        <jobDomain>"IT"</jobDomain>
+        <maritalStatus>"single"</maritalStatus>
+        <numberOfChildreen>0</numberOfChildreen>
+        <annualWage>57000</annualWage>
+        <yearsExperience>12</yearsExperience>
+    </person>
+    <person>
+        <fullName>"Amal Bouazza"</fullName>
+        <age>55</age>
+        <gender>"female"</gender>
+        <jobTitle>"Jobless"</jobTitle>
+        <jobDomain>"N/A"</jobDomain>
+        <maritalStatus>"married"</maritalStatus>
+        <numberOfChildreen>2</numberOfChildreen>
+        <annualWage>0</annualWage>
+        <yearsExperience>0</yearsExperience>
+    </person>
+    <person>
+        <fullName>"Caroline Lasnier"</fullName>
+        <age>37</age>
+        <gender>"female"</gender>
+        <jobTitle>"Pharmasist"</jobTitle>
+        <jobDomain>"chimestry"</jobDomain>
+        <maritalStatus>"single"</maritalStatus>
+        <numberOfChildreen>1</numberOfChildreen>
+        <annualWage>60000</annualWage>
+        <yearsExperience>10</yearsExperience>
+    </person>
+</persons>
