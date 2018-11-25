@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<stats>
+    <persons>3</persons>
+    <jobless>1</jobless>
+    <married>1</married>
+    <single>2</single>
+    <averageAge>42</averageAge>
+    <numberOfPeopleAboveAverageAge>1</numberOfPeopleAboveAverageAge>
+    <averageSalaries>39000</averageSalaries>
+    <averageSalariesAdjusted>58500</averageSalariesAdjusted>
+    <totalNumberOfChildreen>3</totalNumberOfChildreen>
+</stats>
