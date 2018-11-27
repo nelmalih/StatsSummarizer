@@ -84,7 +84,7 @@ public class StatsHandler extends DefaultHandler {
             Stats lStats = new Stats(lNbOfPerson, lNbOfJobless, lNbOfMarried, lNbOfSingle, lAverageAge, lNbOfPersonAboveAverageAge,
                                         lAverageSalary, lAverageSalaryAdjusted, lTotalOfChildren);
 
-            ResultGenerator.setStats(lStats);
+            XMLParserImp.setStats(lStats);
         }
     }
 

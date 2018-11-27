@@ -1,51 +1,34 @@
 import org.junit.Test;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-
-import java.util.Map;
 
 import static org.junit.Assert.assertTrue;
 
 public class TestResultGenerator {
 
+    private final static String INPUT_FILE_DIR_PATH = System.getProperty("user.dir") +
+            "\\src\\main\\resources\\inputs\\$.xml";
+    private final static String OUTPUT_FILE_DIR_PATH = System.getProperty("user.dir") +
+            "\\src\\main\\resources\\results\\$.xml";
+
     @Test
     public void testBuildResultFileUsingDOM(){
-        ResultGenerator lResultGenerator = ResultGenerator.get();
+        XMLParserUsingDOM lXmlParserUsingDOM = XMLParserUsingDOM.get();
 
-        lResultGenerator.init("InputSimpleFile");
+        lXmlParserUsingDOM.initInputFile(INPUT_FILE_DIR_PATH.replace("$", "InputSimpleFile"),
+                                            OUTPUT_FILE_DIR_PATH.replace("$", "DomOutputSimpleFile"));
+        lXmlParserUsingDOM.initDOM();
 
-        assertTrue(lResultGenerator.buildResultFileUsingDOM("domOutputFile"));
+        assertTrue(lXmlParserUsingDOM.buildResultFile());
     }
 
     @Test
     public void testbuildResultFileUsingSAX(){
-        ResultGenerator lResultGenerator = ResultGenerator.get();
+        XMLParserUsingSAX lXMLParserUsingSAX = XMLParserUsingSAX.get();
 
-        lResultGenerator.init("InputSimpleFile");
+        lXMLParserUsingSAX.initInputFile(INPUT_FILE_DIR_PATH.replace("$", "InputSimpleFile"),
+                OUTPUT_FILE_DIR_PATH.replace("$", "SaxOutputSimpleFile"));
+        lXMLParserUsingSAX.initDOM();
 
-        assertTrue(lResultGenerator.buildResultFileUsingSAX("saxOutputFile"));
+        assertTrue(lXMLParserUsingSAX.buildResultFile());
     }
 
-    @Test
-    public void testComputeIndicators(){
-
-        ResultGenerator lResultGenerator = ResultGenerator.get();
-        lResultGenerator.init("InputSimpleFile");
-
-        Document document = lResultGenerator.getDom();
-        document.getDocumentElement().normalize();
-        NodeList nodeList = document.getElementsByTagName(Constants.PERSON_TAG);
-
-        Map<String, Integer> lMap = lResultGenerator.computeIndicators(nodeList);
-
-        assertTrue(nodeList.getLength() == 3);
-        assertTrue(lMap.get(Constants.JOBLESS_TAG).toString().equals("1"));
-        assertTrue(lMap.get(Constants.MARRIED_TAG).toString().equals("1"));
-        assertTrue(lMap.get(Constants.SINGLE_TAG).toString().equals("2"));
-        assertTrue(lMap.get(Constants.AVERAGE_AGE_TAG).toString().equals("42"));
-        assertTrue(lMap.get(Constants.NB_OF_PERSON_ABOVE_AVERAGE_AGE_TAG).toString().equals("1"));
-        assertTrue(lMap.get(Constants.AVERAGE_SALARY_TAG).toString().equals("39000"));
-        assertTrue(lMap.get(Constants.AVERAGE_SALARY_ADJUSTED_TAG).toString().equals("58500"));
-        assertTrue(lMap.get(Constants.TOTAL_NUMBER_OF_CHILDREN_TAG).toString().equals("3"));
-    }
 }
