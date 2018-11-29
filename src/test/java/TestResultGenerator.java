@@ -1,13 +1,16 @@
 import org.junit.Test;
-
+import java.io.File;
 import static org.junit.Assert.assertTrue;
 
 public class TestResultGenerator {
 
     private final static String INPUT_FILE_DIR_PATH = System.getProperty("user.dir") +
-            "\\src\\main\\resources\\inputs\\$.xml";
+            File.separator + "src" + File.separator + "main" + File.separator + "resources" +
+            File.separator + "inputs" + File.separator + "$.xml";
+
     private final static String OUTPUT_FILE_DIR_PATH = System.getProperty("user.dir") +
-            "\\src\\main\\resources\\results\\$.xml";
+            File.separator + "src" + File.separator + "main" + File.separator + "resources" +
+            File.separator + "results" + File.separator + "$.xml";
 
     @Test
     public void testBuildResultFileUsingDOM(){
